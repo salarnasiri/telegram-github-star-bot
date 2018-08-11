@@ -16,6 +16,7 @@ bot.
 """
 from time import sleep
 
+import os
 from telegram import (ReplyKeyboardMarkup, ReplyKeyboardRemove, Bot, MessageEntity)
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, RegexHandler,
                           ConversationHandler)
@@ -346,4 +347,6 @@ def main():
 
 
 if __name__ == '__main__':
+    if not os.path.isdir("db"):
+        os.mkdir("db")
     main()
