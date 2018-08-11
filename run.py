@@ -27,8 +27,7 @@ from utils import *
 from models import User, Github, Secret, db, Submit
 import logging
 
-TOKEN = "your bot token"
-bot = Bot(token=TOKEN)
+bot = Bot(token=Const.TOKEN)
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
@@ -201,8 +200,6 @@ def github_history_token(bot, update, user_data):
         message += u"/%d %s %s....%s\n" % (c, _secret.user_name, _secret.secret[:9], _secret.secret[-4:])
         user_data['tokens'][c] = _secret.id
         c += 1
-    else:
-        message = u"تا حالا چیزی اضافه نکردی\n"
     message += u"/cancel"
     bot.sendMessage(user.id, message,
                     reply_markup=ReplyKeyboardRemove())

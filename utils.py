@@ -30,3 +30,4 @@ class SitePrefix(object):
 class Const(object):
     REQUEST_DELAY = 1
     MAX_TRY = 5
+    TOKEN = "your token"
