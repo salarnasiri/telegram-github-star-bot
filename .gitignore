@@ -1,0 +1,8 @@
+db/
+venv/
+env/
+*.pyc
+.idea/*
+.idea
+screenlog.*
+__pycache__/
